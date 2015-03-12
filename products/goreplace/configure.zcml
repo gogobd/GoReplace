@@ -5,6 +5,7 @@
            i18n_domain="GoReplace">
 
   <!-- ##code-section configure.zcml.header -->
+  <five:registerPackage package="." initialize=".initialize" />
   <!-- ##/code-section configure.zcml.header -->
 
   <i18n:registerTranslations directory="locales" />
