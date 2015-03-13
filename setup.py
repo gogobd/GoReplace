@@ -1,10 +1,9 @@
 """
-
 """
 
 from setuptools import setup, find_packages
 
-setup(name="products.goreplace",
+setup(name="Products.GoReplace",
       version="1.0",
       description="",
       classifiers=[
@@ -12,13 +11,13 @@ setup(name="products.goreplace",
           "Programming Language :: Python",
           "Framework :: Zope2",
       ],
-      keywords='akbild plone goreplace',
+      keywords='akbild plone GoReplace',
       author="Markus Hilbert, Georg Bernhard",
       author_email="m.hilbert@akbild.ac.at, gogo@akbild.ac.at",
       url="https://www.akbild.ac.at",
       license="GPL2",
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['products'],
+      namespace_packages=['Products'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
