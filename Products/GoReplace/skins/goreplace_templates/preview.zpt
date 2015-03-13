@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<div metal:fill-slot="main">
+    <div tal:define="dummy here/dry_run">
+        <div tal:define="dry_result here/REQUEST/replacements|nothing">
+            <div tal:omit-tag="" tal:condition="dry_result">
+                <h1>GoReplace</h1>
+                <p>
+                    <span tal:replace="dry_result/objectchangecount" /> of 
+                    <span tal:replace="dry_result/itemcount" /> objects change, 
+                    <span tal:replace="dry_result/fieldchangecount" /> value(s).
+                </p>
+                find:<div class="go_replace_find" tal:content="here/getFind"></div>
+                replace:<div class="go_replace_replace" tal:content="here/getReplace"></div>
+                <table>
+                    <div tal:omit-tag="" 
+                         tal:repeat="ores python: dry_result['replacements']">
+                        <div tal:condition="ores/changed">
+                            <tr>
+                                <th colspan="2">
+                                    <img tal:condition="ores/icon" 
+                                         tal:attributes="src ores/icon;
+                                                         alt ores/meta_type;" />
+                                    <span tal:content="ores/meta_type" />
+                                    <a tal:attributes="href string:resolveuid/${ores/uid}" tal:content="ores/id" />
+                                </th>
+                            </tr>
+                            <div tal:omit-tag=""
+                                 tal:repeat="fres ores/fields">
+                                <div tal:omit-tag=""
+                                     tal:condition="fres/changed">
+                                    <tr>
+                                        <th colspan="2">
+                                            <div tal:replace="fres/name" />                            
+                                        </th>
+                                    </tr>
+                                    <tr class="GoReplace" tal:condition="not: here/getRepr">
+                                        <td class="GoReplace_old">
+                                            <div tal:replace="structure python: fres['old']" />
+                                        </td>
+                                        <td class="GoReplace_new">
+                                            <div tal:replace="structure python: fres['new']" />
+                                        </td>
+                                    </tr>
+                                    <tr tal:condition="here/getRepr">
+                                        <td colspan="2">
+                                            <div tal:replace="python: repr(fres['old'])" />
+                                        </td>
+                                    </tr>
+                                    <tr tal:condition="here/getRepr">
+                                        <td colspan="2">
+                                            <div tal:replace="python: repr(fres['new'])" />
+                                        </td>
+                                    </tr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

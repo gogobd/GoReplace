@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<import-steps>
+
+ 
+
+
+ <import-step 
+    id="GoReplace-Update-RoleMappings" 
+    handler="Products.GoReplace.setuphandlers.updateRoleMappings"
+    title="Update Workflow role mappings for GoReplace"
+    version="2014-12-04T11:44:52.703637">
+   <dependency step="GoReplace-QI-dependencies"/>
+   updates the workflow role mappings for GoReplace
+ </import-step>
+
+ <import-step 
+    id="GoReplace-postInstall" 
+    handler="Products.GoReplace.setuphandlers.postInstall"
+    title="manual coded post-install for GoReplace"
+    version="2014-12-04T11:44:52.703637">
+   <dependency step="GoReplace-QI-dependencies"/>
+   manual coded post-install for GoReplace
+ </import-step>
+
+<!-- ##code-section ADDITIONALSTEPS -->
+<!-- ##/code-section ADDITIONALSTEPS -->
+
+</import-steps>
+ 
