@@ -2,7 +2,7 @@
 #
 # File: GoReplacement.py
 #
-# Copyright (c) 2014 by unknown <unknown>
+# Copyright (c) 2015 by unknown <unknown>
 # Generator: ArchGenXML Version 2.6
 #            http://plone.org/products/archgenxml
 #
@@ -79,7 +79,7 @@ schema = Schema((
     StringField(
         name='catalog_search',
         widget=StringField._properties['widget'](
-            maxlen=4096,
+            maxlength=4096,
             size=85,
             label='Catalog_search',
             label_msgid='GoReplace_label_catalog_search',

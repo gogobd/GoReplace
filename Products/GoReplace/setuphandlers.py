@@ -2,7 +2,7 @@
 #
 # File: setuphandlers.py
 #
-# Copyright (c) 2014 by unknown <unknown>
+# Copyright (c) 2015 by unknown <unknown>
 # Generator: ArchGenXML Version 2.6
 #            http://plone.org/products/archgenxml
 #
