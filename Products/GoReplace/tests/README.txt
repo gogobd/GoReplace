@@ -52,7 +52,7 @@ The GoReplacement content type
 ==========================
 
 In this section we are tesing the GoReplacement content type by performing
-basic operations like adding, updadating and deleting GoReplacement content
+basic operations like adding, updating and deleting GoReplacement content
 items.
 
 
